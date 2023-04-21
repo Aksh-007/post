@@ -10,7 +10,7 @@ import Box from "@mui/material/Box";
 const PostCard = () => {
   // creating custom hooks
   const post = useGetPost();
-  // console.log(post);
+  console.log(post);
   if (Object.keys(post).length === 0 || undefined)
     return <h1>Request exceed</h1>;
 
@@ -18,20 +18,21 @@ const PostCard = () => {
     <Box className="box">
       {post.map((post) => {
         return (
-          <Card sx={{ maxWidth: 345 }} key={post?.id}>
+          <Card sx={{ maxWidth: 355 }} key={post?.id}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {post?.title}
+                Title : {post?.title}
               </Typography>
               <hr />
               <Typography variant="body2" color="text.secondary">
+                <h2>Discription</h2>
                 {post?.body}
               </Typography>
             </CardContent>
             <hr />
             <CardActions>
               <Typography variant="body2" color="text.secondary">
-                {post?.tags?.join(",")}
+                {post?.tags?.join(", ")}
               </Typography>
             </CardActions>
             <Button size="small"> Reaction : {post?.reactions}/10</Button>
