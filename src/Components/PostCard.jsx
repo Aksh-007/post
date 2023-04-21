@@ -6,13 +6,18 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+// import SkeletonLoading from "./SkeletonLoading";
 
 const PostCard = () => {
   // creating custom hooks
   const post = useGetPost();
   console.log(post);
   if (Object.keys(post).length === 0 || undefined)
-    return <h1>Request exceed</h1>;
+    return (
+      <div className="loading">
+         <h1>Loading....</h1>
+      </div>
+    )
 
   return (
     <Box className="box">

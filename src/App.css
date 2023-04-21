@@ -10,5 +10,7 @@ body{
   margin: 2rem;
   padding: 2rem;
 }
-/* .box :hover{
-} */
+
+.loading{
+  text-align: center;
+}
